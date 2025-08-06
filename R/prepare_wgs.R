@@ -403,7 +403,7 @@ prepare_wgs = function(chrom_names, tumourbam, normalbam, tumourname, normalname
 
   if (!skip_allele_counting) {
     # Obtain allele counts for 1000 Genomes locations for both tumour and normal
-    foreach::foreach(i=1:length(chrom_names)) {
+    for (i in 1:length(chrom_names))  {
       getAlleleCounts(bam.file=tumourbam,
                       output.file=paste(tumourname,"_alleleFrequencies_chr", chrom_names[i], ".txt", sep=""),
                       g1000.loci=paste(g1000prefix, chrom_names[i], ".txt", sep=""),
